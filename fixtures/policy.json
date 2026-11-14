@@ -1,0 +1,77 @@
+{
+  "allowed_algs": [
+    "hmac-sha256"
+  ],
+  "allowed_keyids": [
+    "gw1",
+    "gw2"
+  ],
+  "max_clock_skew": 30,
+  "require_content_digest": true,
+  "require_related_request": true,
+  "required_components": [
+    "@status",
+    {
+      "name": "@method",
+      "params": {
+        "req": true
+      }
+    },
+    {
+      "name": "@path",
+      "params": {
+        "req": true
+      }
+    },
+    "content-digest"
+  ],
+  "request_policy": {
+    "allowed_algs": [
+      "hmac-sha256"
+    ],
+    "allowed_keyids": [
+      "gw1",
+      "gw2"
+    ],
+    "max_clock_skew": 30,
+    "required_components": [
+      "@method",
+      "@authority",
+      "@path"
+    ],
+    "required_tag": "gw-req",
+    "require_content_digest": false
+  },
+  "sign": {
+    "label": "rsig-201",
+    "keyid": "gw1",
+    "created": 1730000000,
+    "expires": 1730000600,
+    "nonce": "n-resp-201",
+    "tag": "gw-resp",
+    "related-request": "sig1",
+    "ensure_content_digest": true,
+    "components": [
+      "@status",
+      {
+        "name": "@method",
+        "params": {
+          "req": true
+        }
+      },
+      {
+        "name": "@path",
+        "params": {
+          "req": true
+        }
+      },
+      {
+        "name": "@authority",
+        "params": {
+          "req": true
+        }
+      },
+      "content-digest"
+    ]
+  }
+}

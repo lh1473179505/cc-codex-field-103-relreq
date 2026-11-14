@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "GET",
+    "scheme": "https",
+    "authority": "API.Example.com",
+    "path": "/v1/orders",
+    "query": "limit=10&tag=alpha",
+    "headers": [
+      [
+        "host",
+        "API.Example.com"
+      ],
+      [
+        "accept",
+        "application/json"
+      ],
+      [
+        "signature-input",
+        "sig1=(\"@method\" \"@authority\" \"@path\" \"@query\" \"@query-param\";name=\"tag\");created=1730000000;keyid=\"gw1\";alg=hmac-sha256;expires=1730000600;nonce=\"n-get-1\";tag=\"gw-req\""
+      ],
+      [
+        "signature",
+        "sig1=:PLNMT8dtysYOg/IhPPXvE2d9O0fjDNYv1Sm6HyD0aXQ=:"
+      ]
+    ],
+    "body": "",
+    "now": 1730000000
+  },
+  "status": 201,
+  "headers": [
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "body": "{\"id\":\"ord-10\"}",
+  "now": 1730000000
+}
